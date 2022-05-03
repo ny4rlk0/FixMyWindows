@@ -1,4 +1,4 @@
-TITLE Fix My Windows
+TITLE Fix My Windows v1
 cls
 @echo off
 echo This will not work if you did not removed virus and thing that autostarts it!
