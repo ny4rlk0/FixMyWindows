@@ -2,11 +2,10 @@ TITLE Fix My Windows
 cls
 @echo off
 echo This will not work if you did not removed virus and thing that autostarts it!
-echo This computer needs to be connected to internet in order to this batch file to repair the Windows!
+echo This computer needs to be connected to internet in order this program to repair the Windows!
 echo It will download required files from Microsoft's server!
-echo Ny4rlk0 https://github.com/ny4rlk0/Windows-Cache-Cleaner/
+echo Ny4rlk0 https://github.com/ny4rlk0/FixMyWindows
 echo "                                                       "
-pause
 if _%1_==_payload_  goto :payload
 
 :getadmin
