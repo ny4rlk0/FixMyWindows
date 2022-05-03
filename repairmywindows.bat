@@ -1,4 +1,4 @@
-TITLE Partly Restore Hijacked System
+TITLE Fix My Windows
 cls
 @echo off
 echo This will not work if you did not removed virus and thing that autostarts it!
