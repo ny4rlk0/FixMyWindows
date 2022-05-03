@@ -4,6 +4,8 @@ cls
 echo This will not work if you did not removed virus and thing that autostarts it!
 echo This computer needs to be connected to internet in order this program to repair the Windows!
 echo It will download required files from Microsoft's server!
+echo It will restart the computer after finished!
+echo It may look stuck but its not. It just takes long time to reinstall some of the Windows Components.
 echo Ny4rlk0 https://github.com/ny4rlk0/FixMyWindows
 echo "                                                       "
 if _%1_==_payload_  goto :payload
