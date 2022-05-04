@@ -13,6 +13,7 @@ Python based tool to fix common issues or virus releated issues on Windows.
 <br>(Batch file does not detected as virus so if you have any doubt just use that or copy of it's contents.)
 <br>Because of pyinstaller, Windows Defender Detects as virus. Well i dont have much choice. I dont have any way to sign with key. 
 <br>(Or more like money in this case. Yes it costs 400$ a year to get a sign. Thx MS.)
+<br>.EXE file will always download latest batch file from this github repo.
  * Screen Shots:
 <p align="center">
     <img src="1.jpg">
