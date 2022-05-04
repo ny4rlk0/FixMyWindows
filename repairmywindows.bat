@@ -63,19 +63,37 @@ gpupdate /force
 
 echo "Reset Important Services to Default"
 sc config "SysMain" start=auto
+timeout 2
 sc config "UsoSvc" start=auto
+timeout 2
 sc config "wuauserv" start=auto
+timeout 2
 sc config "WaasMedicSvc" start=auto
+timeout 2
 sc config "mpssvc" start=auto
+timeout 2
 sc config "SecurityHealthService" start=auto
+timeout 2
 sc config "DoSvc" start=auto
+timeout 2
 sc config "SgrmBroker" start=auto
+timeout 2
 sc config "uhssvc" start=auto
+timeout 2
 sc config "InstallService" start=auto
+timeout 2
 sc config "WinDefend" start=auto
+timeout 2
 sc config "WdNisSvc" start=auto
+timeout 2
 sc config "WlanSvc" start=auto
+timeout 2
 sc config "wscsvc" start=auto
+timeout 2
+sc config "Audiosrv" start=auto
+timeout 2
+sc config "AudioEndpointBuilder" start=auto
+timeout 2
 netsh interface tcp set global autotuninglevel=highlyrestricted
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent" /v "AssumeUDPEncapsulationContextOnSendRule" REG_DWORD /d 2 /f
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\WaasMedicSvc" /v Start /f /t REG_DWORD /d 2
@@ -83,18 +101,35 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\wuauserv" /v Start /f /t REG_DWO
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\UsoSvc" /v Start /f /t REG_DWORD /d 2
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\DisableAntiSpyware" /v Start /f /t REG_DWORD /d 0
 sc start "UsoSvc"
+timeout 2
 sc start "wuauserv"
+timeout 2
 sc start "WaasMedicSvc"
+timeout 2
 sc start "SysMain"
+timeout 2
 sc start "mpssvc"
+timeout 2
 sc start "DoSvc"
+timeout 2
 sc start "SgrmBroker"
+timeout 2
 sc start "uhssvc"
+timeout 2
 sc start "InstallService"
+timeout 2
 sc start "WinDefend"
+timeout 2
 sc start "WdNisSvc"
+timeout 2
 sc start "WdNisSvc"
+timeout 2
 sc start "wscsvc"
+timeout 2
+sc start "Audiosrv"
+timeout 2
+sc start "AudioEndpointBuilder"
+timeout 2
 
 echo "Search For System Problems"
 sfc /scannow
