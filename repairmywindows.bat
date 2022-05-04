@@ -182,6 +182,7 @@ sc config "camsvc" start=demand
 timeout 2
 sc config "TimeBrokerSvc" start=demand
 timeout 2
+sc config "dot3svc" start=demand
 netsh interface tcp set global autotuninglevel=highlyrestricted
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent" /v "AssumeUDPEncapsulationContextOnSendRule" REG_DWORD /d 2 /f
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\WaasMedicSvc" /v Start /f /t REG_DWORD /d 2
