@@ -1,4 +1,4 @@
-# FixMyWindows
+# Fix My Windows
 Python based tool to fix common issues or virus releated issues on Windows. 
 <br>It will download and run the latest patch from this repo.
 <br>Best to scan your computer with some solid antivirus delete the virus then run this tool.
