@@ -94,6 +94,94 @@ sc config "Audiosrv" start=auto
 timeout 2
 sc config "AudioEndpointBuilder" start=auto
 timeout 2
+sc config "ClickToRunSvc" start=auto
+timeout 2
+sc config "WSearch" start=auto
+timeout 2
+sc config "FrameServer" start=demand
+timeout 2
+sc config "FrameServerMonitor" start=demand
+timeout 2
+sc config "NcdAutoSetup" start=demand
+timeout 2
+sc config "NcbService" start=demand
+timeout 2
+sc config "nsi" start=auto
+timeout 2
+sc config "netprofm" start=demand
+timeout 2
+sc config "AppXSvc" start=demand
+timeout 2
+sc config "BrokerInfrastructure" start=auto
+timeout 2
+sc config "BthAvctpSvc" start=demand
+timeout 2
+sc config "DeviceAssociationService" start=demand
+timeout 2
+sc config "Dhcp" start=auto
+timeout 2
+sc config "Dnscache" start=auto
+timeout 2
+sc config "TabletInputService" start=demand
+timeout 2
+sc config "iphlpsvc" start=auto
+timeout 2
+sc config "LanmanWorkstation" start=auto
+timeout 2
+sc config "wlidsvc" start=demand
+timeout 2
+sc config "RtkAudioUniversalService" start=auto
+timeout 2
+sc config "PlugPlay" start=auto
+timeout 2
+sc config "CryptSvc" start=auto
+timeout 2
+sc config "EFS" start=demand
+timeout 2
+sc config "SgrmBroker" start=auto
+timeout 2
+sc config "DPS" start=auto
+timeout 2
+sc config "WdiServiceHost" start=demand
+timeout 2
+sc config "WdiSystemHost" start=demand
+timeout 2
+sc config "lmhosts" start=demand
+timeout 2
+sc config "Themes" start=auto
+timeout 2
+sc config "BFE" start=auto
+timeout 2
+sc config "Appinfo" start=demand
+timeout 2
+sc config "TermService" start=demand
+timeout 2
+sc config "UmRdpService" start=demand
+timeout 2
+sc config "SessionEnv" start=demand
+timeout 2
+sc config "DusmSvc" start=auto
+timeout 2
+sc config "DsSvc" start=demand
+timeout 2
+sc config "WpnService" start=auto
+timeout 2
+sc config "TokenBroker" start=demand
+timeout 2
+sc config "Wcmsvc" start=auto
+timeout 2
+sc config "EventLog" start=auto
+timeout 2
+sc config "IpOverUsbSvc" start=auto
+timeout 2
+sc config "WinHttpAutoProxySvc" start=demand
+timeout 2
+sc config "Spooler" start=auto
+timeout 2
+sc config "camsvc" start=demand
+timeout 2
+sc config "TimeBrokerSvc" start=demand
+timeout 2
 netsh interface tcp set global autotuninglevel=highlyrestricted
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent" /v "AssumeUDPEncapsulationContextOnSendRule" REG_DWORD /d 2 /f
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\WaasMedicSvc" /v Start /f /t REG_DWORD /d 2
@@ -129,6 +217,10 @@ timeout 2
 sc start "Audiosrv"
 timeout 2
 sc start "AudioEndpointBuilder"
+timeout 2
+sc start "ClickToRunSvc"
+timeout 2
+sc start "WSearch"
 timeout 2
 
 echo "Search For System Problems"
