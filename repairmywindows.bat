@@ -1,4 +1,4 @@
-TITLE Fix My Windows 4.05.2022 04:48
+TITLE Fix My Windows 4.05.2022 05:26
 cls
 @echo off
 echo This will not work if you did not removed virus and thing that autostarts it!
