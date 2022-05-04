@@ -9,3 +9,7 @@ Python based tool to fix common issues or virus releated issues on Windows.
 <br>Then will try to use Windows built in commands to initiate self repair.
 <br>Finally it will scan everything that connected to this computer. (It should scan network drives too. I'm not so sure tho.)
 <br>It will not delete your personal files!
+ * Screen Shots:
+<p align="center">
+    <img src="1.jpg">
+    <img src="2.jpg">
