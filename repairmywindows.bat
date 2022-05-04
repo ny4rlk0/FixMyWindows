@@ -23,45 +23,45 @@ goto :eof
 
 ::Kodu buraya yaz::
 
-::Bypass Powershell Restrictions
+echo "Bypass Powershell Restrictions"
 powershell "Set-ExecutionPolicy Unrestricted"
 
-::Dump Hosts File to txt File
+echo "Dump Hosts File to txt File"
 copy "%SystemRoot%\System32\drivers\etc\hosts" "%HOMEDRIVE%\users\%username%\Desktop\HostDump.txt"
 
-::Dump Running Proccess to txt File
+echo "Dump Running Proccess to txt File"
 powershell "gwmi win32_process | select Caption,Path | Format-List *" > "%HOMEDRIVE%\users\%username%\Desktop\ProccessDump.txt"
 
-::Dump DNS Cache to txt File
+echo "Dump DNS Cache to txt File"
 ipconfig /displaydns >> %HOMEDRIVE%\users\%username%\Desktop\DNSDump.txt
 
-::Dump Connected Machines to txt File
+echo "Dump Connected Machines to txt File"
 powershell "netstat -n -b -q | Format-List *" > "%HOMEDRIVE%\users\%username%\Desktop\ConnectionDump1.txt"
 powershell "netstat -f -b -q | Format-List *" > "%HOMEDRIVE%\users\%username%\Desktop\ConnectionDump2.txt"
 
-::Rewrite the Hosts File for Security
+echo "Rewrite the Hosts File for Security"
 (echo Cleared for security ny4rlk0. && echo https://github.com/ny4rlk0/Windows-Cache-Cleaner/blob/main/PartlyRestoreHijackedSystem.bat) > "%SystemRoot%\System32\drivers\etc\hosts"
 
-::Enable Firewall
+echo "Enable Firewall"
 netsh firewall set opmode mode=ENABLE
 netsh advfirewall set allprofiles state on
 
-::Reset Firewall to Default Values
+echo "Reset Firewall to Default Values"
 netsh firewall reset
 netsh advfirewall reset
 
-::Reset Windows Store
+echo "Reset Windows Store"
 wsreset
 
-::Flush DNS Cache
+echo "Flush DNS Cache"
 ipconfig /flushdns
 
-::Reset Enforced Group Policy Rules to Default
+echo "Reset Enforced Group Policy Rules to Default"
 RD /S /Q "%WinDir%\System32\GroupPolicy"
 RD /S /Q "%WinDir%\System32\GroupPolicyUsers"
 gpupdate /force
 
-::Reset Important Services to Default
+echo "Reset Important Services to Default"
 sc config "SysMain" start=auto
 sc config "UsoSvc" start=auto
 sc config "wuauserv" start=auto
@@ -96,17 +96,17 @@ sc start "WdNisSvc"
 sc start "WdNisSvc"
 sc start "wscsvc"
 
-::Search For System Problems
+echo "Search For System Problems"
 sfc /scannow
 
-::Download Working Versions of Broken and Infected Files from MicroSoft
+echo "Download Working Versions of Broken and Infected Files from MicroSoft"
 DISM /Online /Cleanup-Image /CheckHealth
 DISM /Online /Cleanup-Image /RestoreHealth
 
-::Reinstall all Windows Apps
+echo "Reinstall all Windows Apps"
 powershell "Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register """$($_.InstallLocation)\AppXManifest.xml"""}"
 
-::RESET DEFENDER SETTINGS
+echo "RESET DEFENDER SETTINGS"
 powershell 'Set-MpPreference -DisableRealtimeMonitoring $false'
 powershell 'Set-MpPreference -DisableIOAVProtection $false'
 powershell "$pathExclusions = Get-MpPreference | select ExclusionPath; foreach ($exclusion in $pathExclusions) {if ($exclusion.ExclusionPath -ne $null) {Remove-MpPreference -ExclusionPath $exclusion.ExclusionPath}}"
@@ -125,13 +125,13 @@ powershell 'Set-MpPreference -SignatureDisableUpdateOnStartupWithoutEngine $fals
 powershell 'Set-MpPreference -SignatureFallbackOrder "MicrosoftUpdateServer|MMPC"'
 powershell 'Set-MpPreference -QuarantinePurgeItemsAfterDelay 90'
 
-::Reset Theme
+echo "Reset Theme"
 start /b "ThemeReset" "%HOMEDRIVE%\Windows\Resources\Themes\aero.theme"
 
-::Reapply Powershell Restrictions
+echo "Reapply Powershell Restrictions"
 powershell 'Set-ExecutionPolicy restricted'
 
-::Scan The Computer
+echo "Scan The Computer"
 echo "Updating the Windows Defender..."
 powershell "Update-MpSignature"
 echo "Initiating a scan of everything that connected to this computer."
@@ -142,7 +142,7 @@ echo "Initiating a Full Systemwide scan of everything that connected to this com
 powershell "Start-MpScan -ScanType FullScan"
 echo "Scan Finished. Now Rebooting..."
 
-::Restart the Computer
+echo "Restart the Computer"
 shutdown -r -t 10
 
 ::Kodu buraya yaz::
