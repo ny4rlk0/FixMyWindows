@@ -62,6 +62,8 @@ RD /S /Q "%WinDir%\System32\GroupPolicyUsers"
 gpupdate /force
 
 echo "Reset Important Services to Default"
+sc config "BITS" start=auto
+timeout 2
 sc config "SysMain" start=auto
 timeout 2
 sc config "UsoSvc" start=auto
@@ -191,6 +193,8 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\wuauserv" /v Start /f /t REG_DWO
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\UsoSvc" /v Start /f /t REG_DWORD /d 2
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\DisableAntiSpyware" /v Start /f /t REG_DWORD /d 0
 sc start "UsoSvc"
+timeout 2
+sc start "BITS"
 timeout 2
 sc start "wuauserv"
 timeout 2
