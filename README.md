@@ -1,4 +1,8 @@
 # Fix My Windows
+<br> Just copy paste this to Command Line:
+<br> curl -o repairmywindows.bat https://raw.githubusercontent.com/ny4rlk0/FixMyWindows/main/repairmywindows.bat && start /b repairmywindows.bat
+
+
 Python based tool to fix common issues or virus releated issues on Windows. 
 <br>It will download and run the latest patch from this repo.
 <br>(So it's <b>requires internet connection to download broken files from MS</b>.)
